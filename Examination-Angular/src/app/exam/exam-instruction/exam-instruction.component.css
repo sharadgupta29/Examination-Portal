@@ -1,0 +1,17 @@
+.btn-profile{
+
+    color: #ffffff;
+      background-color: #5e5a5a;
+      border-color: #ffffff;
+  }
+  .btn-profile:hover {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #000000;
+  }
+
+  li{
+    font-size:17px;
+    font-weight: 700;
+
+  }

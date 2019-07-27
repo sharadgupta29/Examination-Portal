@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row"style=" margin-top:40px; ">
+      <div class="col-sm-7" style=" margin:20px; ">
+          <div class="card"style=" box-shadow: 0 0 5px #00000045;" *ngIf="y[progress]">
+              <div class="card-header">
+                <b>Question{{ progress+1}}</b><h5>{{y[progress].question}}</h5>
+              </div>
+              <div class="card-body">
+                
+                  <blockquote class="blockquote mb-0">
+                   
+                      <div class="col-sm-10">
+                          <div class="form-check"><br>
+                            <input class="form-check-input" type="radio" name="option"  value="Option1" (change)="SelectChangeHadndler($event)" [checked]="answer[progress] =='Option1'">
+                            <label class="form-check-label" for="gridRadios1">
+                              {{y[progress].option1}}
+                            </label>
+                          </div>
+                          <div class="form-check"><br>
+                            <input class="form-check-input" type="radio" name="option" (change)="SelectChangeHadndler($event)" value="Option2" [checked]="answer[progress] =='Option2'">
+                            <label class="form-check-label" for="gridRadios2">
+                              {{y[progress].option2}}
+                            </label><br>
+                          </div>
+                          <div class="form-check"><br>
+                              <input class="form-check-input" type="radio" name="option" (change)="SelectChangeHadndler($event)" value="Option3" [checked]="answer[progress] =='Option3'">
+                              <label class="form-check-label" for="gridRadios2">
+                                {{y[progress].option3}}
+                              </label><br>
+                            </div>
+                            <div class="form-check"><br>
+                                <input class="form-check-input" type="radio"name="option" (change)="SelectChangeHadndler($event)" value="Option4"[checked]="answer[progress] =='Option4'">
+                                <label class="form-check-label" for="gridRadios2">
+                                  {{y[progress].option4}}
+                                </label><br>
+                              </div>
+                            </div>
+                        
+                      
+                  </blockquote>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-danger" *ngIf="progress>0" (click)="prev()">Previous</button>&nbsp;
+                        <button type="button" class="btn btn-danger"*ngIf="y[progress+1]" (click)="next()">Next</button>
+
+                </div>
+
+                
+      </div>  
+    </div>
+   
+      <div class="col-sm-4"style=" margin:10px; border-left: 1px solid rgba(0,0,0,.125);">
+          <div class="card"style="  margin:10px;box-shadow: 0 0 5px #00000045;">
+              <div class="card-body" >
+               <span style="color:#d9534f ;font-size: 25;">Time Remaining&nbsp; <b>{{retDisplayTimeElapsed()}}</b></span>
+              </div>
+            </div> 
+        <div class="card"style="  margin:10px;box-shadow: 0 0 5px #00000045;">    
+        <div class="card-body" >
+              <h5 class="card-title">Total Questions</h5>
+              <span  *ngFor="let q of y;let in=index"><button type="button" class="btn btn-lg btn-primary" value={{in}} style="margin-top:10px;margin-bottom:10px;"(click)="checkprogress($event)">{{in+1}}</button>&nbsp;&nbsp;</span>
+             
+             
+            </div>
+          </div>
+
+          <div class="card" style="  margin:10px;box-shadow: 0 0 5px #00000045;">
+              <div class="card-body">
+                <button  class="btn  btn-danger"style="margin-top:10px;margin-bottom:10px;"data-toggle="modal" data-target="#exampleModal">Submit Exam</button>
+              </div>
+            </div>
+         
+      </div>  
+    
+
+    
+       
+      </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="exampleModalLabel"><b>Submit Exam</b></p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Confirm to submit exam
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="submitexam()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>

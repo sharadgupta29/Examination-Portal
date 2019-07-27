@@ -1,0 +1,13 @@
+.bg-bottom-footer {
+    width: 100%;
+    display: block;
+    background: #1f1d1d;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+   
+    height: 3rem;   
+}
+
+ 

@@ -1,0 +1,34 @@
+
+
+<div class="card" style="margin:30px; margin:40px; box-shadow: 0 0 5px #00000045;">
+    <div class="card-header">
+      <b><span style="color:#d9534f">Take</span> Exam</b>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+          <footer class="blockquote-footer">Select Subject</footer>
+        <p><select class="custom-select" (change)="SelectChangeHadndler($event)">
+            <option selected>Choose...</option>
+          <option *ngFor="let s of x "value={{s.subjectId}} >{{s.subject}}</option>
+          </select></p>
+        
+      </blockquote>
+
+
+      <div class="card bg-light">
+          <div class="card-body">
+            <h5 class="card-title">{{subject}}</h5>
+            <p class="card-text">{{description}}</p>
+            <a class="btn btn-danger"(click)="fetchQuestions()">Give</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  
+  

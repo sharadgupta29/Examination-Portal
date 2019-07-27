@@ -1,0 +1,35 @@
+
+a {
+    color: #9c9cb3f5;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+   
+  
+ 
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 900px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar p {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar p {
+        display: none;
+      text-align: center;
+      float: none;
+    }
+}

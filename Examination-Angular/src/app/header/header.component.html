@@ -1,0 +1,55 @@
+<div class="sticky-top">
+<div class="bg-top-header ">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-6 col-xs-12">
+        <p><i class="fa fa-phone"></i>&nbsp;7982300321 &nbsp;&nbsp;<i class="fa fa-envelope-o"></i>&nbsp; info@examportal.in</p>
+      </div>
+      <div class="col-lg-6 col-sm-6 col-xs-12">
+        <p class="tr"><a  ><i class="fa fa-facebook-square fa-2x a-bg-color"></i></a>&nbsp;&nbsp;<a  ><i class="fa fa-twitter-square fa-2x a-bg-color"></i></a>&nbsp;&nbsp;<a ><i class="fa fa-google-plus-square fa-2x a-bg-color"></i></a>&nbsp;&nbsp;<a ><i class="fa fa-linkedin-square fa-2x a-bg-color"></i></a></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<nav class="navbar navbar-expand-sm navbar-light bg-light "style="z-index:1000;" >
+    <a class="navbar-brand" routerLink="/login" ><b>Examination Portal</b></a>
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown" *ngIf="user == 'admin';">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Student
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Add Student</a>
+            <a class="dropdown-item" href="#">View Student</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown"*ngIf="user == 'admin';">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Exam
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Add Exam</a>
+            <a class="dropdown-item" href="#">View Exam</a>
+          </div>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        {{user}}
+      </span>
+      &nbsp;
+      <span class="navbar-text" >
+        <a (click)="logout()" > <b>{{lout}}</b></a>
+      </span>
+    
+
+    </div>
+  </nav> 
+  </div>
